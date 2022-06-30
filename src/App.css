@@ -1,38 +1,65 @@
+body {
+
+  
+  /* background-color: blue; */
+}
 .App {
-  text-align: center;
+  margin: 40px 20px;
+  width: 100vw;
+  height: 100vh;
+  display: grid; 
+  grid-auto-columns: 1fr;  
+  grid-template-columns: 0.9fr 1.1fr 1fr 1fr; 
+  grid-template-rows: 0.9fr 1.1fr; 
+  gap: 21px 23px; 
+  grid-template-areas: 
+    "Sidebar Reviews Average-Rating Sentiment-Analysis"
+    "Sidebar Website-Visitors Website-Visitors Website-Visitors"; 
 }
+.Sidebar { 
+  grid-area: Sidebar;
+  background-color: lightgray;
+ 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+   }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+   .Sidebar ul {
+    list-style-type: none;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    
+   }
+.Reviews { 
+  padding-left: 15px;
+  grid-area: Reviews;
+  background-color: lightgray;
+ }
+.Average-Rating { 
+  padding-left: 15px;
+  grid-area: Average-Rating;
+  background-color: lightgray;
+ }
+.Sentiment-Analysis { 
+  padding-left: 15px;
+  grid-area: Sentiment-Analysis;
+  background-color: lightgray;
+ }
+.Website-Visitors {
+  padding-left: 15px;
+  background-color: lightgray;
+  display: grid; 
+  grid-template-columns: 0.3fr 2.4fr 0.3fr; 
+  grid-template-rows: 0.4fr 2.2fr 0.4fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". Inner-Box ."
+    ". . ."; 
+  grid-area: Website-Visitors; 
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.Inner-Box { 
+  grid-area: Inner-Box; 
+  background-color: gray;}
